@@ -176,10 +176,10 @@ for fold_idx in range(1, 11):
         log_file.write(f"Fold {fold_idx}:\n")
 
     # Load the dataset for the current fold
-    train_dataset = P50dataset(section='train', fold=10, val_index=fold_idx, data_split=data_split)
+    train_dataset = DS1dataset(section='train', fold=10, val_index=fold_idx, data_split=data_split)
     train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=1, shuffle=True)
 
-    val_dataset = P50dataset(section='validation', fold=10, val_index=fold_idx, data_split=data_split)
+    val_dataset = DS1dataset(section='validation', fold=10, val_index=fold_idx, data_split=data_split)
     val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=1, shuffle=False)
 
     # Initialize the model for the current fold
